@@ -1,0 +1,77 @@
+﻿<div class="container">
+    <div class="row">
+        <div class="col-md-5 room-entry">
+            <h2>Add Room:</h2>
+            <form name="roomdetails" novalidate>
+                <div class="panel">
+                    <div class="panel-body form-horizontal">
+                        <div class="form-group">
+                            <label for="concept" class="col-md-4 control-label">Room Name</label>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" name="roomname" data-ng-model="vm.roomname" required />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="description" class="col-md-4 control-label">Description</label>
+                            <div class="col-md-8">
+                                <textarea rows="3" class="form-control" id="description" name="about" data-ng-model="vm.about" required></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="capacity" class="col-md-4 control-label">Capacity</label>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" id="capacity" name="capacity" data-ng-model="vm.capacity" required />
+                            </div>
+                        </div>
+
+                        <label>Peak Hour Prices (10 am - 6 pm)</label>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">Price for Peak Hours (Rs/2 Hours)</label>
+                            <div class="col-md-8">
+                                <input type="number" class="form-control" name="pricepeakhours" data-ng-model="vm.pricepeakhours" required />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">Price for Peak Hours (Rs/Full Day)</label>
+                            <div class="col-md-8">
+                                <input type="number" class="form-control" name="pricepeakhoursfull" data-ng-model="vm.pricepeakhoursfull" required />
+                            </div>
+                        </div>
+
+                        <label>Non Peak Hour Prices (8-10 am, 6-10 pm)</label>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">Price for non peak hours (Rs/2 Hours)</label>
+                            <div class="col-md-8">
+                                <input type="number" class="form-control" name="pricenonpeakhours" data-ng-model="vm.pricenonpeakhours" required />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">Price for non peak hours (Rs/Half Day)</label>
+                            <div class="col-md-8">
+                                <input type="number" class="form-control" name="pricenonpeakhoursfull" data-ng-model="vm.pricenonpeakhoursfull" required />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-12 text-right">
+                                <button data-ng-click="vm.addRooms(roomdetails.$invalid)" data-ng-disabled="roomdetails.$invalid" type="button" class="btn btn-default preview-add-button">
+                                    <span class="glyphicon glyphicon-plus"></span> Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="col-md-7 room-list">
+            <div class="gridStyle" ui-grid="vm.roomgridOptions"></div>
+        </div>
+    </div>
+</div>
