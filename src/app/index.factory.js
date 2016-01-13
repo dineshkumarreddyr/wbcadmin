@@ -76,6 +76,30 @@
                 deferred.reject(response);
             });
             return deferred.promise;
+        };
+
+        function addAgents(data) {
+            var deferred = $q.defer();
+
+            $http.post($appConfig.apiUrl + 'agents', data).success(function (response) {
+                deferred.resolve(response);
+            })
+            .error(function (response) {
+                deferred.reject(response);
+            });
+            return deferred.promise;
+        };
+
+        function getAgents() {
+            var deferred = $q.defer();
+
+            $http.get($appConfig.apiUrl + 'agents').success(function (response) {
+                deferred.resolve(response);
+            })
+            .error(function (response) {
+                deferred.reject(response);
+            });
+            return deferred.promise;
         }
 
         return {
@@ -84,7 +108,9 @@
             GetRooms: getRooms,
             AddProducts: addProducts,
             GetProducts: getProducts,
-            Deleteproduct: deleteProduct
+            Deleteproduct: deleteProduct,
+            AddAgents: addAgents,
+            GetAgents: getAgents
         }
     }
 })();

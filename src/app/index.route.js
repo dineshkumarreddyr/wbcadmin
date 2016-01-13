@@ -32,6 +32,12 @@
                 controller: 'ProductsController',
                 controllerAs: 'vm'
             })
+            .state('home.agents', {
+                url: '/agents',
+                templateUrl: 'app/components/agents/wbc.agents.html',
+                controller: 'AgentController',
+                controllerAs: 'vm'
+            })
           .state('login', {
               url: '/',
               templateUrl: 'app/components/login/wbc.admin.login.html',
